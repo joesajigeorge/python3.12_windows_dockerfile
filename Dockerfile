@@ -1,6 +1,9 @@
 # Base image for Windows container
 FROM mcr.microsoft.com/windows/servercore:ltsc2022
 
+# Create the working directory
+RUN mkdir C:\app
+
 # Working directory (optional, adjust as needed)
 WORKDIR C:\app
 
