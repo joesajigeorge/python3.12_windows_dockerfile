@@ -1,2 +1,2 @@
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+FROM windowsimagemicrosoft/sdk-3.5-windowsservercore-ltsc2019
 ENTRYPOINT ["echo", "Hello"]
