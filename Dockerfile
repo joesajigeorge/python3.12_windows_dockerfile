@@ -1,16 +1,12 @@
 # Base image for Windows container
 FROM mcr.microsoft.com/windows/servercore:ltsc2022
 
-# Install Python using official installer URL
-RUN powershell -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://www.python.org/downloads/windows/ -OutFile python.installer.msi
-
-# Install Python silently (modify version number if needed)
-RUN msiexec /i python.installer.msi /quiet /norestart ADDLOCAL=Python310
-
-# Set environment variables (adjust path if needed)
-ENV PATH "C:\Python310\;%PATH%"
-
 # Working directory (optional, adjust as needed)
 WORKDIR C:\app
 
+# Install Python 3.12
+RUN powershell -Command "Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe -OutFile python-3.12.0-amd64.exe"
+RUN python-3.12.0-amd64.exe /quiet InstallAllUsers=1 PrependPath=1
+
+# Set the entrypoint
 ENTRYPOINT ["echo", "Hello"]
