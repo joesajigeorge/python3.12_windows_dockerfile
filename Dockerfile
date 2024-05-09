@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2022
 RUN mkdir C:\app
 
 # Working directory (optional, adjust as needed)
-WORKDIR C:\app
+WORKDIR C:\\app
 
 # Install Python 3.12
 RUN powershell -Command "Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe -OutFile python-3.12.0-amd64.exe"
