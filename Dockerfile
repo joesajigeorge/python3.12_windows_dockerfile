@@ -1,2 +1,2 @@
-FROM windowsimagemicrosoft/sdk-3.5-windowsservercore-ltsc2019
+FROM ubuntu
 ENTRYPOINT ["echo", "Hello"]
