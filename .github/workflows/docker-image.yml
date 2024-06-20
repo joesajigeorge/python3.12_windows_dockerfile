@@ -8,7 +8,7 @@ on:
 
 env:
   IMAGE_NAME: sajigeorgejoe/my_windows_python_demo_container
-  IMAGE_TAG: github
+  IMAGE_TAG: v1
   
 jobs:
 
@@ -33,4 +33,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ env.IMAGE_NAME }}:$(date +%s)
+          tags: ${{ env.IMAGE_NAME }}:$( env.IMAGE_TAG )
