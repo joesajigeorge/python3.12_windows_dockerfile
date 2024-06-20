@@ -18,7 +18,7 @@ $ docker run -itd winpycontainer:v1
 ```
 This command will run the container in detached mode. 
 
-## CICD
+## CI
 
 ### GitHub Actions
 
